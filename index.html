@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gentek Elektronik | Web Tanıtım</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f4f4f4;
+      text-align: center;
+      color: #222;
+    }
+    header {
+      background-color: #1a73e8;
+      color: white;
+      padding: 20px;
+      font-size: 22px;
+      font-weight: bold;
+    }
+    .nav {
+      background: #333;
+      color: white;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      padding: 10px;
+    }
+    .nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: 500;
+    }
+    .nav a:hover {
+      text-decoration: underline;
+    }
+    main {
+      padding: 40px 20px;
+    }
+    img {
+      width: 300px;
+      margin: 15px;
+      border-radius: 12px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.2);
+      cursor: pointer;
+      transition: transform 0.2s ease;
+    }
+    img:hover {
+      transform: scale(1.05);
+    }
+    footer {
+      background: #111;
+      color: #bbb;
+      padding: 10px;
+      font-size: 14px;
+      margin-top: 40px;
+    }
+
+    /* 🔍 BÜYÜTÜLEN GÖRSEL STİLİ */
+    .popup {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.8);
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+    }
+    .popup img {
+      width: 80%;
+      max-width: 900px;
+      border-radius: 12px;
+      box-shadow: 0 0 30px rgba(255,255,255,0.3);
+    }
+    .popup span {
+      position: absolute;
+      top: 25px;
+      right: 45px;
+      color: white;
+      font-size: 40px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <header>Gentek Elektronik | Web Tanıtım</header>
+
+  <nav class="nav">
+    <a href="#home">Ana Sayfa</a>
+    <a href="#urun">Ürünler</a>
+    <a href="#iletisim">İletişim</a>
+    <a href="#hakkinda">Hakkında</a>
+  </nav>
+
+  <main>
+    <h2>Sayfa Görselleri</h2>
+    <p>Görsellere tıklayarak büyütebilirsiniz 👇</p>
+    <div>
+      <img src="Home.png" alt="Ana Sayfa" onclick="openPopup(this.src)">
+      <img src="Urun.png" alt="Ürün Sayfası" onclick="openPopup(this.src)">
+      <img src="Iletisim.png" alt="İletişim Sayfası" onclick="openPopup(this.src)">
+      <img src="Hakkında.png" alt="Hakkında Sayfası" onclick="openPopup(this.src)">
+    </div>
+  </main>
+
+  <div id="popup" class="popup" onclick="closePopup()">
+    <span>&times;</span>
+    <img id="popupImg" src="">
+  </div>
+
+  <footer>© 2025 Gentek Elektronik | Tüm hakları saklıdır.</footer>
+
+  <script>
+    const popup = document.getElementById('popup');
+    const popupImg = document.getElementById('popupImg');
+
+    function openPopup(src) {
+      popup.style.display = 'flex';
+      popupImg.src = src;
+    }
+
+    function closePopup() {
+      popup.style.display = 'none';
+    }
+  </script>
+</body>
+</html>
